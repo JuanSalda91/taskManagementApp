@@ -10,6 +10,7 @@
 <body>
     
    <h1>MOMENTUM</h1>
+   <h2>Task Management App</h2>
 
     <!-- --- Inputs, status dropdown and button--- -->
    <div class="container">
@@ -21,14 +22,15 @@
     <input type="date" id="deadline" name="deadline" required>
     <label for="status">Select Status:</label>
         <select name="status" id="status">
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-            <option value="pending">Pending</option>
-            <option value="completed">Completed</option>
-            <option value="archived">Archived</option>
+            <option value="Complete">Complete</option>
+            <option value="In Progress">In Pogress</option>
+            <option value="Overdue">Overdue</option>
         </select>
 
-        <button class="addTask">Add Task</button>
+        <button id="addTaskBtn">Add Task</button>
+
+    <ul id="taskList"></ul>
+
 
     </label>
    </div>
