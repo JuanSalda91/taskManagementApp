@@ -1,0 +1,194 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contenedor general */
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9fafd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.2em;
+  color: #2c3e50;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  color: #34495e;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 12px 0 6px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Inputs, selects */
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+/* Botón */
+button#addTaskBtn {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  width: 100%;
+  padding: 12px;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#addTaskBtn:hover {
+  background-color: #1c5980;
+}
+
+/* Lista de tareas */
+#taskList {
+  list-style: none;
+  margin-top: 24px;
+  padding-left: 0;
+}
+
+#taskList li {
+  background-color: #ecf0f1;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  word-break: break-word;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
+}
+
+/* Botón eliminar tareas */
+#taskList li button {
+  background-color: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+#taskList li button:hover {
+  background-color: #c0392b;
+}
+
+#taskList li select {
+  padding: 6px 12px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  appearance: none;
+  width: auto;
+}
+
+#taskList li select:focus {
+  outline: none;
+  background-color: #ffffff;
+}
+
+
+/* Filtros select */
+#categoryFilter,
+#statusFilter {
+  width: 48%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1.5px solid #bdc3c7;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#categoryFilter:focus,
+#statusFilter:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+/* Contenedor filtros: para pantallas pequeñas ponerlos en columna */
+.container select {
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  /* Para móviles, filtros y botón al 100% ancho */
+  #categoryFilter,
+  #statusFilter,
+  button#addTaskBtn {
+    width: 100%;
+  }
+
+  #taskList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #taskList li button {
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: 601px) {
+  /* Para pantallas más grandes, filtros lado a lado */
+  #categoryFilter,
+  #statusFilter {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+  }
+  #statusFilter {
+    margin-right: 0;
+  }
+}
